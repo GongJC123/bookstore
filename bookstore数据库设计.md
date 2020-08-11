@@ -6,16 +6,16 @@
 
 ### 字段：
 
-| 名称              | 类型         | 描述                                               |
-| :---------------- | ------------ | :------------------------------------------------- |
-| id                | int(11)      | 分类id                                             |
-| name              | varchar(100) | 分类名称                                           |
-| root              | bit(1)       | 是否为根                                           |
-| parentId          | int(11)      | 外键指向自己                                       |
-| children          | int(11)      | 动态字段？？（多级列表）**递归嵌套，引入插件即可** |
-| deleted(可选)     | bit          | 逻辑删除                                           |
-| create_time(可选) | date         |                                                    |
-| update_time(可选) | date         |                                                    |
+| 名称              | 类型             | 描述                                               |
+| :---------------- | ---------------- | :------------------------------------------------- |
+| id                | integerField(11) | 分类id                                             |
+| name              | charField(100)   | 分类名称                                           |
+| root              | booleanField(1)  | 是否为根                                           |
+| parentId          | integerField(11) | 外键指向自己                                       |
+| children          | integerField(11) | 动态字段？？（多级列表）**递归嵌套，引入插件即可** |
+| deleted(可选)     | (扩展)           | 逻辑删除                                           |
+| create_time(可选) |                  |                                                    |
+| update_time(可选) |                  |                                                    |
 
 
 
@@ -69,25 +69,25 @@
 
 ### 字段：
 
-| 名称         | 类型 | 描述     |
-| ------------ | ---- | -------- |
-| id           |      | id       |
-| title        |      | 名称     |
-| author       |      | 作者     |
-| price        |      | 定价     |
-| discount     |      | 折扣     |
-| imgUrl       |      | 图片     |
-| bigImgUrl    |      | 大图     |
-| bookConcern  |      | 出版社   |
-| publishDate  |      | 出版日期 |
-| brief        |      |          |
-| inventory    |      |          |
-| detail       |      |          |
-| newness      |      |          |
-| hot          |      |          |
-| specialOffer |      |          |
-| slogan       |      |          |
-| category     |      |          |
+| 名称         | 类型             | 描述                     |
+| ------------ | ---------------- | ------------------------ |
+| id           | integerField(11) | id                       |
+| title        | charField(100)   | 名称                     |
+| author       | charField(100)   | 作者                     |
+| price        | double?decimal   | 定价                     |
+| discount     | decimal,float?   | 折扣                     |
+| imgUrl       | image            | 图片                     |
+| bigImgUrl    | image            | 大图                     |
+| bookConcern  | charField(100)   | 出版社                   |
+| publishDate  | dateField        | 出版日期                 |
+| brief        | ???              | 简介？？？               |
+| inventory    |                  | 库存                     |
+| detail       |                  | 详情                     |
+| newness      | booleanField     | 是否新品                 |
+| hot          | booleanField     | 是否热销                 |
+| specialOffer |                  | 限时特价，特别优惠       |
+| slogan       |                  | 口号标语，广告           |
+| category     | ？？？           | 类别（一对一？一对多？） |
 
 
 
@@ -97,22 +97,22 @@
 
 ## 3. 评论表
 
-| 名称        | 类型 | 描述             |
-| ----------- | ---- | ---------------- |
-| id          |      | id               |
-| content     |      | 评论内容         |
-| commentDate |      | 评论时间         |
-| username    |      | 当前评论，用户名 |
-| book        |      | 书               |
+| 名称        | 类型           | 描述             |
+| ----------- | -------------- | ---------------- |
+| id          | id             | id               |
+| content     | textarea??     | 评论内容         |
+| commentDate | date           | 评论时间         |
+| username    | charField(100) | 当前评论，用户名 |
+| book        | charField(100) | 书(id?name?)     |
 
 
 
 ## 4. 用户表
 
-| 名称     | 类型 | 描述 |
-| -------- | ---- | ---- |
-| id       |      |      |
-| username |      |      |
-| password |      |      |
-| mobile   |      |      |
+| 名称     | 类型             | 描述   |
+| -------- | ---------------- | ------ |
+| id       | integerField(11) | id     |
+| username | charField(100)   | 用户名 |
+| password | charField(100)   | 密码   |
+| mobile   | integerField(11) | 手机号 |
 
