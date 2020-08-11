@@ -116,3 +116,19 @@
 | password | charField(100)   | 密码   |
 | mobile   | integerField(11) | 手机号 |
 
+# 二、项目创建
+
+## 1. 安装pipenv
+
+## 2. 用pipenv创建虚拟环境（换源）
+
+## 3. 安装Django2.2.15版本
+
+## 4. 修改settings.py中必要属性
+
+## 5. 修改数据库连接
+
+## 6. 按照教程添加依赖包[商城demo](https://www.cnblogs.com/derek1184405959/p/8747961.html)
+
+
+
