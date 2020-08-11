@@ -8,6 +8,7 @@
       '/api': {
           //这里的地址是后端数据接口的地址
           //target: 'http://localhost:8082/',
+          // target: 'http://localhost:8000/',
           target: 'http://111.229.37.167/',
           //允许跨域
           changOrigin: true,
